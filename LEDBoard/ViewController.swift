@@ -70,13 +70,21 @@ class ViewController: UIViewController {
     
     func configBoardLabel() {
         boardLabel.text = "Hello Swift"
-        boardLabel.font = .systemFont(ofSize: 120, weight: .bold)
+        boardLabel.font = .systemFont(ofSize: dynamicFontSize(150), weight: .bold)
         setRandomLabelColor()
     }
     
     func setRandomLabelColor() {
         let color = colorList.randomElement()!
         boardLabel.textColor = color
+    }
+    
+    func dynamicFontSize(_ fontSize: CGFloat) -> CGFloat {
+        let iPhone14Height: CGFloat = 844
+        let screenLandscapeWidth = UIScreen.main.bounds.size.width
+        let calculatedSize = (screenLandscapeWidth / iPhone14Height) * fontSize
+        
+        return calculatedSize
     }
 }
 
