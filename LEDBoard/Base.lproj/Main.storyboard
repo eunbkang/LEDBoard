@@ -33,12 +33,18 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375.5" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="pressedReturnKey:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="7DG-Ea-us8"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jH3-4d-JnO">
                                                 <rect key="frame" x="383.5" y="0.0" width="68.5" height="34.5"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="보내기"/>
+                                                <connections>
+                                                    <action selector="tappedSendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B6d-KZ-dmJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgC-2b-cdi">
                                                 <rect key="frame" x="460" y="0.0" width="44" height="34.5"/>
@@ -63,6 +69,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="jpb-lo-EV6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="82X-oy-Io3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N0Q-Pd-8XL" secondAttribute="trailing" constant="20" id="exg-9g-40D"/>
@@ -70,6 +77,9 @@
                             <constraint firstItem="N0Q-Pd-8XL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="g5g-y4-oqR"/>
                             <constraint firstItem="jpb-lo-EV6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xQ5-zT-mfy"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2oT-FD-wds" appends="YES" id="Wip-4j-4RV"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="boardLabel" destination="jpb-lo-EV6" id="osQ-hR-1yc"/>
@@ -80,6 +90,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2oT-FD-wds">
+                    <connections>
+                        <action selector="tappedBackgroundView:" destination="BYZ-38-t0r" id="P3X-r5-sST"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="101.40845070422536" y="3.75"/>
         </scene>

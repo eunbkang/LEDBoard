@@ -21,7 +21,20 @@ class ViewController: UIViewController {
         
         configUI()
     }
-
+    
+    @IBAction func tappedBackgroundView(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func pressedReturnKey(_ sender: UITextField) {
+    }
+    
+    @IBAction func tappedSendButton(_ sender: UIButton) {
+        boardLabel.text = textField.text
+        setRandomLabelColor()
+        view.endEditing(true)
+    }
+    
     @IBAction func tappedColorButton(_ sender: UIButton) {
         setRandomLabelColor()
     }
