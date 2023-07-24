@@ -31,12 +31,15 @@ class ViewController: UIViewController {
     
     @IBAction func tappedSendButton(_ sender: UIButton) {
         boardLabel.text = textField.text
-        setRandomLabelColor()
         view.endEditing(true)
     }
     
     @IBAction func tappedColorButton(_ sender: UIButton) {
         setRandomLabelColor()
+    }
+    
+    @IBAction func tappedBoardLabel(_ sender: UITapGestureRecognizer) {
+        topBackgroundView.isHidden.toggle()
     }
     
     func configUI() {
@@ -53,6 +56,7 @@ class ViewController: UIViewController {
     }
     
     func configTextField() {
+        textField.placeholder = "내용을 작성해주세요."
         textField.font = .preferredFont(forTextStyle: .body)
         textField.borderStyle = .none
     }
